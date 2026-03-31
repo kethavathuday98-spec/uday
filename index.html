@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Munch</title>
+
+<style>
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: orange;
+}
+
+/* Hero */
+.hero {
+  height: 90vh;
+  background: url("https://source.unsplash.com/1600x900/?food") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  top: 0;
+  left: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 50px;
+}
+
+.hero p {
+  margin: 15px 0;
+}
+
+.btn {
+  background: orange;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Menu */
+.menu {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.menu h2 {
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  width: 300px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 10px 0;
+}
+
+/* Contact */
+.contact {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.contact form {
+  max-width: 400px;
+  margin: auto;
+}
+
+.contact input, .contact textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+/* Footer */
+.footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 30px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+  <div class="logo">Food Munch</div>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Delicious Food Delivered</h1>
+    <p>Fresh & Tasty meals at your doorstep</p>
+    <button class="btn" onclick="orderNow()">Order Now</button>
+  </div>
+</section>
+
+<!-- Menu -->
+<section class="menu">
+  <h2>Our Menu</h2>
+
+  <div class="cards">
+    <div class="card">
+      <img src="https://source.unsplash.com/300x200/?burger">
+      <h3>Burger</h3>
+      <p>Juicy burgers</p>
+    </div>
+
+    <div class="card">
+      <img src="https://source.unsplash.com/300x200/?pizza">
+      <h3>Pizza</h3>
+      <p>Cheesy pizza</p>
+    </div>
+
+    <div class="card">
+      <img src="https://source.unsplash.com/300x200/?dessert">
+      <h3>Desserts</h3>
+      <p>Sweet treats</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact">
+  <h2>Contact Us</h2>
+
+  <form onsubmit="submitForm(event)">
+    <input type="text" placeholder="Your Name" id="name" required>
+    <input type="email" placeholder="Your Email" id="email" required>
+    <textarea placeholder="Your Message" required></textarea>
+    <button class="btn">Send Message</button>
+  </form>
+</section>
+
+<!-- Footer -->
+<div class="footer">
+  <p>© 2026 Food Munch. All Rights Reserved.</p>
+</div>
+
+<script>
+// Button click
+function orderNow() {
+  alert("Order feature coming soon!");
+}
+
+// Form submit
+function submitForm(event) {
+  event.preventDefault();
+  let name = document.getElementById("name").value;
+
+  alert("Thank you " + name + "! We will contact you soon.");
+}
+</script>
+
+</body>
+</html>
